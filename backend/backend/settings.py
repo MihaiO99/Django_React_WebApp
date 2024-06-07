@@ -52,8 +52,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django_recaptcha",
     "api",
+    "rest_framework",
     "corsheaders",
 ]
 
