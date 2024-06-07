@@ -10,4 +10,3 @@ pytz
 sqlparse
 tzdata
 whitenoise
-django-recaptcha
