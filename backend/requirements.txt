@@ -1,0 +1,14 @@
+asgiref
+Django
+django-cors-headers
+djangorestframework
+djangorestframework-simplejwt
+psycopg2
+PyJWT
+python-dotenv
+pytz
+sqlparse
+tzdata
+whitenoise
+drf-recaptcha
+djangorestframework-recaptcha
