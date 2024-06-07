@@ -52,13 +52,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "rest_framework_recaptcha",
+    "django_recaptcha",
     "api",
     "rest_framework",
     "corsheaders",
 ]
-
-DRF_RECAPTCHA_SECRET_KEY = '6LeABvIpAAAAAHTMmPzPyIKiYKSvCx6IliNB1TjF'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

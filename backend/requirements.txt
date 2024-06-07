@@ -10,5 +10,4 @@ pytz
 sqlparse
 tzdata
 whitenoise
-drf-recaptcha
-djangorestframework-recaptcha
+django-recaptcha
