@@ -32,9 +32,9 @@ function Register() {
         } catch (error) {
             if (error.response && error.response.data) {
                 setErrors(error.response.data);
+                setEmail("");
+                setUsername("");
             }
-            setEmail("");
-            setUsername("");
         } finally {
             setLoading(false)
         }
