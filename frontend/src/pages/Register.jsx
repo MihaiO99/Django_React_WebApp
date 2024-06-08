@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import api from "../api";
 import { useNavigate, Link } from "react-router-dom";
 import "../styles/Form.css"
@@ -23,6 +23,7 @@ function Register() {
     const [formerrors, setErrors] = useState({});
     const [reCaptchaToken, setReCaptchaToken] = useState("");
     const navigate = useNavigate();
+    const recaptchaRef = React.createRef();
 
     const onSubmit = async (e) => {
         setLoading(true);
@@ -133,7 +134,10 @@ function Register() {
                         helperText={errors.password ? errors.password.message : formerrors.password}
                     />
                 </div>
-                <ReCAPTCHA sitekey={import.meta.env.VITE_OASIS_SITE_KEY} onChange={(e) => setReCaptchaToken(e.target.value)}/>
+                <ReCAPTCHA 
+                    ref = {recaptchaRef}
+                    sitekey={import.meta.env.VITE_OASIS_SITE_KEY}
+                    onChange={(e) => setReCaptchaToken(e.target.value)}/>
                 {loading && <LoadingIndicator />}
                 <Button style={{marginTop: 15}} type="submit" variant="contained" color="secondary">
                     Register
