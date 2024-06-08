@@ -20,14 +20,15 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ["id", "first_name", "last_name", "username", "email", "password"]
+        fields = ["id", "first_name", "last_name", "username", "email", "password", "recaptcha"]
 
     def create(self, validated_data):
+        validated_data.pop('recaptcha')
         user = User.objects.create_user(**validated_data)
         return user
     
     def validate(self, attrs):
-        attrs.pop("recaptcha")
+        # attrs.pop("recaptcha")
         return attrs
 
 

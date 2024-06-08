@@ -137,7 +137,9 @@ function Register() {
                 <ReCAPTCHA 
                     ref = {recaptchaRef}
                     sitekey={import.meta.env.VITE_OASIS_SITE_KEY}
-                    onChange={(e) => setReCaptchaToken(e.target.value)}/>
+                    onChange={(e) => setReCaptchaToken(e.target.value)}
+                />
+                {errors.recaptcha && <p>{errors.recaptcha}</p>}
                 {loading && <LoadingIndicator />}
                 <Button style={{marginTop: 15}} type="submit" variant="contained" color="secondary">
                     Register
