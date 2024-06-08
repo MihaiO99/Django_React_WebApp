@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     "api",
     "rest_framework",
     "corsheaders",
-    "captcha",
+    "django_recaptcha",
 ]
 
 RECAPTCHA_PUBLIC_KEY = '6LfOI_QpAAAAAEOmABij2ePD92TiqNdci8fcfJcF'
