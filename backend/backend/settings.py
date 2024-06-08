@@ -55,7 +55,12 @@ INSTALLED_APPS = [
     "api",
     "rest_framework",
     "corsheaders",
+    "captcha",
 ]
+
+RECAPTCHA_PUBLIC_KEY = '6LfOI_QpAAAAAEOmABij2ePD92TiqNdci8fcfJcF'
+RECAPTCHA_PRIVATE_KEY = '6LfOI_QpAAAAAECkrVHc3Q2yyfZd7-tCetuKKFDo'
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
