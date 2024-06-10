@@ -55,13 +55,13 @@ INSTALLED_APPS = [
     "api",
     "rest_framework",
     "corsheaders",
-    "django_recaptcha",
+    # "rest_framework_recaptcha",
 ]
 
-RECAPTCHA_PUBLIC_KEY = '6LfOI_QpAAAAAEOmABij2ePD92TiqNdci8fcfJcF'
-RECAPTCHA_PRIVATE_KEY = '6LfOI_QpAAAAAECkrVHc3Q2yyfZd7-tCetuKKFDo'
+# RECAPTCHA_PUBLIC_KEY = '6LfOI_QpAAAAAEOmABij2ePD92TiqNdci8fcfJcF'
+# DRF_RECAPTCHA_SECRET_KEY = '6LfOI_QpAAAAAECkrVHc3Q2yyfZd7-tCetuKKFDo'
 # SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
-RECAPTCHA_DOMAIN = 'www.recaptcha.net'
+# RECAPTCHA_DOMAIN = 'www.recaptcha.net'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
