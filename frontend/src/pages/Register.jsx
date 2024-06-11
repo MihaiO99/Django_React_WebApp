@@ -6,7 +6,7 @@ import LoadingIndicator from "../components/LoadingIndicator";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useForm } from "react-hook-form";
-// import ReCAPTCHA from 'react-google-recaptcha';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 function Register() {
     const {
@@ -21,15 +21,19 @@ function Register() {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [formerrors, setErrors] = useState({});
-    // const [reCaptchaToken, setReCaptchaToken] = useState("");
+    const [reCaptchaToken, setReCaptchaToken] = useState("");
     const navigate = useNavigate();
-    // const recaptchaRef = React.createRef();
 
     const onSubmit = async (e) => {
         setLoading(true);
         try {
-            await api.post("api/user/register/", { first_name, last_name, username, email, password })
-            navigate("/login")
+            if (!reCaptchaToken) {
+                alert("Perform reCAPTCHA check!")
+            }
+            else {
+                await api.post("api/user/register/", { first_name, last_name, username, email, password })
+                navigate("/login")
+            }
         } catch (error) {
             if (error.response && error.response.data) {
                 setErrors(error.response.data);
@@ -39,6 +43,10 @@ function Register() {
         } finally {
             setLoading(false)
         }
+    };
+
+    const handleRecaptchaChange = (value) => {
+        setReCaptchaToken(value);
     };
 
     return (
@@ -134,12 +142,10 @@ function Register() {
                         helperText={errors.password ? errors.password.message : formerrors.password}
                     />
                 </div>
-                {/* <ReCAPTCHA 
-                    ref = {recaptchaRef}
+                <ReCAPTCHA
                     sitekey={import.meta.env.VITE_OASIS_SITE_KEY}
-                    onChange={(e) => setReCaptchaToken(e.target.value)}
-                /> */}
-                {errors.recaptcha && <p>{errors.recaptcha}</p>}
+                    onChange={handleRecaptchaChange}
+                />
                 {loading && <LoadingIndicator />}
                 <Button style={{marginTop: 15}} type="submit" variant="contained" color="secondary">
                     Register

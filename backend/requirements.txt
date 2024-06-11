@@ -10,4 +10,4 @@ pytz
 sqlparse == 0.5.0
 tzdata
 whitenoise
-# djangorestframework-recaptcha
+django_recaptcha
