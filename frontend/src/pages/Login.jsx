@@ -30,7 +30,7 @@ function Login() {
         } catch (error) {
             if (error.response && error.response.data) {
                 setErrors(error.response.data);
-                alert("User doesn't exist!")
+                alert("Wrong credentials!")
             }
             setUsername("");
             setPassword("");
