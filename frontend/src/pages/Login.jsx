@@ -6,7 +6,7 @@ import "../styles/Form.css"
 import LoadingIndicator from "../components/LoadingIndicator";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 function Login() {
     const {
@@ -23,6 +23,7 @@ function Login() {
     const onSubmit = async (e) => {
         setLoading(true);
         try {
+            // await api.post("/api/code/", { username, password })
             const res = await api.post("/api/token/", { username, password })
             localStorage.setItem(ACCESS_TOKEN, res.data.access);
             localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
