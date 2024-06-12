@@ -58,8 +58,8 @@ INSTALLED_APPS = [
     # "django_recaptcha",
 ]
 
-# RECAPTCHA_PUBLIC_KEY = '6LfOI_QpAAAAAEOmABij2ePD92TiqNdci8fcfJcF'
-# RECAPTCHA_PRIVATE_KEY = '6LfOI_QpAAAAAECkrVHc3Q2yyfZd7-tCetuKKFDo'
+# RECAPTCHA_PUBLIC_KEY = '6LfXRvcpAAAAACWMjeuBA31Ko0YwBiDEQYhjHFof'
+# RECAPTCHA_PRIVATE_KEY = '6LfXRvcpAAAAAKO3_Shr3PKc_K6TZx1YrI_FRFVB'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

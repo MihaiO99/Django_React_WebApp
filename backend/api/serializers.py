@@ -5,12 +5,6 @@ from django.contrib.auth.password_validation import validate_password
 from .models import Note
 
 
-# class UserOTPSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = UserOTP
-#         fields = '__all__'
-
-
 class UserSerializer(serializers.ModelSerializer):
 
     email = serializers.EmailField(
