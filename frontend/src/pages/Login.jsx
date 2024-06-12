@@ -72,7 +72,7 @@ function Login() {
                             required: "Password is required",
                             pattern: {
                                 value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
-                                message: "Password must met the following requirements:\n- minimum 8 characters\n- at least one uppercase\n- at least one lowercase\n- at least one digit",
+                                message: "Password must have the following requirements:\n- minimum 8 characters\n- at least one uppercase\n- at least one lowercase\n- at least one digit",
                             },
                         })}
                         value={password}
