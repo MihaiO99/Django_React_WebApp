@@ -58,8 +58,6 @@ INSTALLED_APPS = [
     "django_recaptcha",
 ]
 
-# AUTH_USER_MODEL = 'api.UserInfo'
-
 RECAPTCHA_PUBLIC_KEY = '6LfOI_QpAAAAAEOmABij2ePD92TiqNdci8fcfJcF'
 RECAPTCHA_PRIVATE_KEY = '6LfOI_QpAAAAAECkrVHc3Q2yyfZd7-tCetuKKFDo'
 

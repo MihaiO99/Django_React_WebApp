@@ -6,6 +6,10 @@ const baseUrl = isDevelopment ? import.meta.env.VITE_API_BASE_URL_LOCAL : import
 
 const api = axios.create({
   baseURL: baseUrl,
+  headers: {
+    "Content-Type": "application/json", 
+    accept: "application/json"
+  }
 });
 
 api.interceptors.request.use(
