@@ -123,7 +123,7 @@ function Register() {
                 </div>
                 <div className = "form-input">
                     <TextField
-                        label="Parola"
+                        label="Parolaa"
                         type="password"
                         variant="outlined"
                         inputProps={{style: {fontSize: 14}}}
