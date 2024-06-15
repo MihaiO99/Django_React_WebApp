@@ -43,16 +43,16 @@ function Login() {
     return (
         <body>
             <form style ={{marginTop: 150}} onSubmit={handleSubmit(onSubmit)} className="form-container">
-                <h1>Login</h1>
+                <h1>Autentificare</h1>
                 <div className = "form-input">
                     <TextField
-                        label="Username"
+                        label="Nume de utilizator"
                         variant="outlined"
                         inputProps={{style: {fontSize: 14}}}
                         InputLabelProps={{style: {fontSize: 14}}}
                         fullWidth
                         {...register("username", {
-                            required: "Username is required",
+                            required: "Introduceți numele de utilizator",
                         })}
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
@@ -62,17 +62,17 @@ function Login() {
                 </div>
                 <div className = "form-input">
                     <TextField
-                        label="Password"
+                        label="Parola"
                         type="password"
                         variant="outlined"
                         inputProps={{style: {fontSize: 14}}}
                         InputLabelProps={{style: {fontSize: 14}}}
                         fullWidth
                         {...register("password", {
-                            required: "Password is required",
+                            required: "Introduceți parola",
                             pattern: {
-                                value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
-                                message: "Password must have the following requirements:\n- minimum 8 characters\n- at least one uppercase\n- at least one lowercase\n- at least one digit",
+                                value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                                message: "Parola trebuie să îndeplinească următoarele cerințe: minim 8 caractere, cel puțin o majusculă, cel puțin o literă mică, cel puțin o cifră și cel puțin un carcater special",
                             },
                         })}
                         value={password}

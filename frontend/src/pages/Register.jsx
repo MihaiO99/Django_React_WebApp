@@ -31,7 +31,7 @@ function Register() {
                 alert("Perform reCAPTCHA check!")
             }
             else {
-                await api.post("api/user/register/", { first_name, last_name, username, email, password })
+                await api.post("api/user/register/", { last_name, first_name, username, email, password })
                 navigate("/login")
             }
         } catch (error) {
@@ -52,32 +52,16 @@ function Register() {
     return (
         <body>
             <form onSubmit={handleSubmit(onSubmit)} className="form-container">
-                <h1>Register</h1>
+                <h1>Înregistrare</h1>
                 <div className = "form-input">
                     <TextField
-                        label="First Name"
-                        variant="outlined"
-                        inputProps={{style: {fontSize: 14}}}
-                        InputLabelProps={{style: {fontSize: 14}}}
-                        fullWidth
-                        {...register("first_name", {
-                            required: "First name is required",
-                        })}
-                        value={first_name}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        error={!!errors.first_name}
-                        helperText={errors.first_name ? errors.first_name.message : formerrors.first_name}
-                    />
-                </div>
-                <div className = "form-input">
-                    <TextField
-                        label="Last Name"
+                        label="Nume de familie"
                         variant="outlined"
                         inputProps={{style: {fontSize: 14}}}
                         InputLabelProps={{style: {fontSize: 14}}}
                         fullWidth
                         {...register("last_name", {
-                            required: "Last name is required",
+                            required: "Introduceți numele de familie",
                         })}
                         value={last_name}
                         onChange={(e) => setLastName(e.target.value)}
@@ -87,13 +71,29 @@ function Register() {
                 </div>
                 <div className = "form-input">
                     <TextField
-                        label="Username"
+                        label="Prenume"
+                        variant="outlined"
+                        inputProps={{style: {fontSize: 14}}}
+                        InputLabelProps={{style: {fontSize: 14}}}
+                        fullWidth
+                        {...register("first_name", {
+                            required: "Introduceți prenumele",
+                        })}
+                        value={first_name}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        error={!!errors.first_name}
+                        helperText={errors.first_name ? errors.first_name.message : formerrors.first_name}
+                    />
+                </div>
+                <div className = "form-input">
+                    <TextField
+                        label="Nume de utilizator"
                         variant="outlined"
                         inputProps={{style: {fontSize: 14}}}
                         InputLabelProps={{style: {fontSize: 14}}}
                         fullWidth
                         {...register("username", {
-                            required: "Username is required",
+                            required: "Introduceți numele de utilizator",
                         })}
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
@@ -109,10 +109,10 @@ function Register() {
                         InputLabelProps={{style: {fontSize: 14}}}
                         fullWidth
                         {...register("email", {
-                            required: "Email is required",
+                            required: "Introduceți adresa de email",
                             pattern: {
                                 value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                                message: "Please enter a valid email address",
+                                message: "Introduceți o adresă de email validă (exemplu@gmail.com)",
                             },
                         })}
                         value={email}
@@ -123,17 +123,17 @@ function Register() {
                 </div>
                 <div className = "form-input">
                     <TextField
-                        label="Password"
+                        label="Parola"
                         type="password"
                         variant="outlined"
                         inputProps={{style: {fontSize: 14}}}
                         InputLabelProps={{style: {fontSize: 14}}}
                         fullWidth
                         {...register("password", {
-                            required: "Password is required",
+                            required: "Introduceți parola",
                             pattern: {
-                                value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
-                                message: "Password must have the following requirements: minimum 8 characters, at least one uppercase, at least one lowercase and at least one digit",
+                                value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                                message: "Parola trebuie să îndeplinească următoarele cerințe: minim 8 caractere, cel puțin o majusculă, cel puțin o literă mică, cel puțin o cifră și cel puțin un carcater special",
                             },
                         })}
                         value={password}
@@ -148,10 +148,10 @@ function Register() {
                 />
                 {loading && <LoadingIndicator />}
                 <Button style={{marginTop: 15}} type="submit" variant="contained" color="secondary">
-                    Register
+                    Înregistrare
                 </Button>
                 <Link to="/login" variant="body2" style={{margin: 15}}>
-                    Already have an accound? Sing in!
+                    Aveți deja un cont? Autentificați-vă!
                 </Link>
             </form>
         </body>
